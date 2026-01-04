@@ -30,6 +30,8 @@ Below is EVERY IMPORTANT QUESTION that uses slow & fast pointers.
 
 👉 Why: fast reaches end → slow at middle
 🔗 https://leetcode.com/problems/middle-of-the-linked-list/
+https://github.com/MayuriN2024/DSA_Problem_Approach/tree/main/Linked_list/Slow_Fast_Pointer/876_Midlle_%20of_linked%20_list
+
 
 2. Delete Middle Node
 
