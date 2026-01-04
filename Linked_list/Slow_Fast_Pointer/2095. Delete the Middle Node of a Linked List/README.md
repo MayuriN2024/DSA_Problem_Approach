@@ -191,3 +191,46 @@ optimal approach
    # space complexity : o(1)
 
    its good because its one pass solution.
+
+
+
+   ---------------------------------------------------------------------------------------------
+# optimal approach here we don't need to hanle edge cases like if one node only 
+   /**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+       class Solution {
+        public:
+            ListNode* deleteMiddle(ListNode* head) {
+           ListNode* dummy = new ListNode(0);
+           dummy -> next  = head;
+
+           ListNode* fast = head;
+           ListNode* slow = head;
+           ListNode* pre = dummy;
+
+           while( fast != NULL && fast ->next != NULL){
+            fast = fast-> next -> next;
+            pre = slow;
+            slow = slow -> next;
+           }
+
+           pre -> next = slow -> next ;
+           return dummy -> next;
+            }
+        };
+
+
+
+   “Although we create a dummy node, it’s only one extra node and does not scale with the size of the input list. Therefore, the auxiliary space complexity remains O(1).”
+
+   space complexity : 0(1)
+
+  # Note : apply this when head node change like here if ther is only one node so head become middle means head can change . or if empty so head can change it can become null
